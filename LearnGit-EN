@@ -1,1 +1,207 @@
+Create a project folder on the drive or in Git or Command Prompt with the mkdir nameProject command
+Go to the project folder with the cd nameProject command
+To create a file in the Git terminal, the touch filename command
+To create a file in the Windows command prompt terminal, echo. > filename 
+To view the files that were previously git-ed, in the project path, the dir command
+To view the status of the files, git status
+To add a file or files, the git add filename or git add -A command
+To record changes, git commit -m "message …. Add filename"
+And to view the details of the changes, git log
+To view the files in the project in the Git terminal, the ls command
+Delete a file from Git and from the system:
+1- With the git rm nameFile command
+2- git commit -m "message … nameFile"
+3- git push
+
+
+Delete a file from Git but keep it on the system:
+1- git rm --cached filename
+2- git commit -m "message … filename"
+3- git push
+Note: To delete the entire project, git rm nameProject
+To see that we are connected to GitHub, use the command git remote -v
+To connect to GitHub, use the command git remote add origin
+Note: To see the contents of the file in the Windows terminal, type filename
+Open with Notepad in the terminal: notepad filename
+Open the file in the terminal with PyCharm and work on it: pycharm filename
+
+
+To move the project to GitHub from the system:
+1- Go to the project folder with the cd nameProject command
+2- Git the project with the git init command
+3- Add files with the git add -A or git add command.
+4- Commit changes with the git commit -m "message…." command
+5- Rename the branch with the git branch -M main command
+6- Connect the project to the Git repository with the git remote add origin repositoryAddress command
+7- Note: The repository we created in GitHub has an address link that we use in step 6
+8- Check with the git remote -v command
+9- Send the project to Git with the main git push -u origin command
+10- Note: If we do not do step 5, we are actually in the master branch and command 9 will not work.
+
+
+If the GitHub repository address is not correct, we remove the address with the following command: git remote remove origin .
+And we re-run the modified address to add the repository with the command: git remote add origin address git project .
+Now, after modifying the GitHub repository address, we move it to the master branch with the command: git push -u origin master .
+
+
+Bringing a project from GitHub to the Windows terminal or Git:
+1- Copy the HTTPS address of the repository in GitHub by clicking on Code 
+2- Go to the path where we want to download the project cd ….
+3- Clone the project with the command git clone repositoryAddress
+4- Now we enter the desired project by typing the repository name cd repositoryName. 
+5- With the command dir in the Windows terminal or ls in Git, we can see the files inside it.
+6- Then we can work on the files, edit them, delete them ....
+7- At the end of any changes to the file and project, we enter the command git push
+
+Note: Files in GitHub in Word format can only be downloaded and are not displayed.
+
+
+Creating a new branch to apply changes to the project: 
+1- First, we bring the project using the two methods mentioned in the terminal
+2- We create a branch with the command nameBranch git branch 
+3- To know which branch we are on, the command git branch
+4- Command 3 shows that we are on the main branch
+5- Now we go to the new branch with the command git checkout nameBranch
+6- We repeat command 3, which shows that we are on the new branch
+7- Now we can create, modify, delete files, and ...
+8- Now to return to the main branch, the command git checkout main 
+9- And we merge the new branch with the main branch with the command git merge nameBranch
+10- To delete branches or branches, the command git branch -d nameBranch
+
+
+When two people are working on the same branch:
+Scenario 1: Two people working directly on the `main` branch:
+1-	Fetch the latest changes from the repository: `git pull origin main`
+2-	Check the status of files: `git status`
+3-	Edit and modify files
+4-	Stage the changes (file or files): `git add -A`
+5-	Commit the changes: `git commit -m "message …"`
+6-	Fetch the latest changes again: `git pull origin main`
+7-	Push changes to the repository: `git push origin main`
+8-	If a conflict occurs, you will encounter the situation described in step 10
+9-	Your code is marked `HEAD`, and your colleague's code is marked `main`
+10-	Remove the markers based on which version you decide to keep
+11-	Then repeat steps 4, 5, and 7
+
+
+
+Second scenario (more professional): Working with a new branch or branch by each person
+1- Get the latest version and go to the main branch git checkout main
+2- Get the latest changes git pull origin main
+3- Create a new branch git checkout -b nameBranch
+4- Edit and change files
+5- Add changes to the file or files git add -A
+6- Record changes git commit -m "message ..."
+7- Send the branch to the repository git push origin nameBranch
+8- Update the main branch neck to avoid conflict with command number 9
+9- git checkout main and then git pull origin main
+10- Bring the main main branch into the new branch created with command number 11
+11- git checkout nameBranch and then git merge main
+12- If a conflict occurs, you will see the two states mentioned in 13
+13- Your code >>>>>> HEAD and the collaborator's code >>>>>> main
+14- Remove the marks depending on which you decide to keep
+15- Steps 5 and Repeat 6
+16- Merge the new branch with the original branch with command number 17
+17- git checkout main and then git merge nameBranch
+18- Final push to GitHub repository git push origin main
+
+
+
+
+
+
+
+
+Getting a project from GitHub (Clone) in PyCharm:
+Copy the project link
+• Go to GitHub
+• Code button → Copy HTTPS link
+2️⃣ Clone in PyCharm
+• Open PyCharm
+• Get from VCS
+• Paste the link in the URL field
+• Choose the save path
+• Click Clone
+The project will be downloaded.
+Making changes to the project
+Checking the status of files (preventing conflicts) in the PyCharm terminal git status
+Before submitting, get the latest changes git pull origin main
+⚠ If the branch name is not main (for example, it was master), write the same.
+If a conflict occurs:
+• Open the files that have problems
+• Fix the marked sections
+After modification: 
+git add .
+git commit -m "resolve conflict"
+Add changes git add .
+Commit changes git commit -m "update project"
+Push to GitHub git push origin main
+
+Moving a project from PyCharm to GitHub:
+✅ Standard method (from within PyCharm)
+1️⃣ Enabling Git in the project
+1. Open the project in PyCharm
+2. Go up the menu to:
+VCS → Enable Version Control Integration
+3. Select the Git option → OK
+2️⃣ Creating a repository in GitHub
+1. Go to github.com
+2. Click New Repository
+3. Enter the project name
+4. Click Create repository
+5. Copy the HTTPS link on the page that opens
+3️⃣ First Commit in PyCharm
+1. Go to:
+Git → Commit
+2. Select the files
+3. Write a message (for example: Initial commit)
+4. Click Commit or Commit and Push
+4️⃣ Connect the project to GitHub
+If you haven't pushed:
+1. Go to:
+Git → Manage Remotes
+2. Click +
+3. Paste the GitHub link you copied
+4. OK
+5️⃣ Push
+1. Go to:
+Git → Push
+2. Click Push
+3. If prompted, enter your GitHub account
+
+Creating a professional tag (Annotated Tag) ✅ Suggested:
+View commits (to select the tag location) git log --oneline
+1. git tag -a v1.0.0 -m "First stable release" Suitable for official project versions
+2. git tag -a v1.0.0 1a2b3c4(hash or code) -m "First stable release" For a specific commit
+3. View the list of tags git tag
+4. View tag information git show v1.0.0
+5. Send the tag to GitHub individually git push origin v1.0.0
+6. Then git push
+7. Send all tags to GitHub git push origin --tags
+8. Delete the tag locally git tag -d v1.0.0
+9. Delete the tag from GitHub git push origin --delete v1.0.0
+10. Note: Semantic Versioning is usually used: vMAJOR.MINOR.PATCH
+11. Example for 9: v1.0.0 Main version, v1.1.0 Added feature, v1.1.1 Bug fix
+🧠 Standard release procedure: 
+1. git add .
+2. git commit -m "Prepare release v1.0.0"
+3. git tag -a v1.0.0 -m "Release version 1.0.0"
+4. git push origin main
+5. git push origin v1.0.0
+
+With the git add -A command, all files are edited after editing and creation.
+
+git config --global user.email "harjmand98@gmail.com"
+To add the user's email in Git
+git config --global user.name hossein
+To add the user's name in Git
+
+To create a commit for changes, you can use a command like `git commit -m 'index edited by hossein'`, or simply `git commit`, which opens an editor for you to write the commit message. To exit the editor, press Esc, then type `:wq` and press Enter.
+
+
+GitLab:
+ As a distributed version control system, Git is the primary tool for managing the history of software projects and team collaboration on programming projects. Users are introduced to basic concepts such as creating a repository, tracking changes, and interacting with remote repositories, and can clone different projects and push their changes to shared servers. These basic skills provide the foundation for using more advanced Git features. Features such as tracking the cause of changes, restoring previous versions, setting user identities, and digital signatures are important tools for facilitating debugging and managing changes in projects, and constant reference to the documentation is recommended for further mastery.
+In the software collaboration space, GitHub and GitLab, two popular code repository management platforms, provide platforms for team collaboration, especially in open source projects. There are important differences between the two in terms of access to private projects; GitLab allows the definition of unlimited private projects at no cost. Contributions to public projects are based on a process such as forking, cloning, making changes, and submitting pull requests or merge requests, which allow members to suggest changes without direct access to the main repository. This collaboration model enables developers to contribute to large, open source projects without access restrictions hindering the collaboration process.
+It is recommended that users practice by creating new repositories and experimenting with various Git processes in training environments or test projects to increase their practical skills. While emphasizing the importance of learning how to solve problems in Git (rather than memorizing its commands), it is also reassuring that the majority of operations in Git are reversible and that unintended errors rarely lead to serious disruption. Practicing, referring to the documentation, and using test projects can lead to deeper mastery and improvement of technical skills in working with Git.
+
 
